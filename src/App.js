@@ -5,6 +5,9 @@ import Home from './component/Home/Home';
 
 import Footer from './component/Shared/Footer';
 import Navbar from './component/Shared/Navbar';
+import Login from './component/Signup/Login';
+import RequireAuth from './component/Signup/RequireAuth';
+import Signup from './component/Signup/Signup';
 
 
 function App() {
@@ -14,7 +17,13 @@ function App() {
      
       <Routes>
       <Route path='/' element={<Home></Home>}></Route>
-      <Route path='/home' element={<Home></Home>}></Route>
+      <Route path='/home' element={
+      <Home></Home>
+    
+    }></Route>
+      <Route path='/register' element={<Signup></Signup>}></Route>
+      <Route path='/login' element={<Login></Login>}></Route>
+      <Route path='/achi' element={<RequireAuth>ghjg</RequireAuth>}></Route>
     
       </Routes>
       

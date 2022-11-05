@@ -1,5 +1,5 @@
 import React from 'react';
-
+import img1 from '../../assert/italy1.jpg'
 
 
 
@@ -19,7 +19,7 @@ const Place = ({ service }) => {
            
             <div className=" lg:max-w-lg  shadow-xl mt-6">
                 <figure className="w-34"> 
-                        <img  src={img} alt="NetWorkError"/>
+                        <img  src={img1} alt="NetWorkError"/>
                 </figure>
                 <div className="p-3 grid justify-center">
                    

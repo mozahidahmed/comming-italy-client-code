@@ -3,3 +3,6 @@
 @tailwind utilities;
 
 
+.bg-style{
+    background-image: url(./component/assert/italy1.jpg);
+}

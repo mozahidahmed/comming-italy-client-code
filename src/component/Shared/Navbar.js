@@ -1,10 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { signOut } from 'firebase/auth';
 import './Navbar.css'
+import auth from '../../firebase.init';
 
 const Navbar = () => {
 
- 
+  const [user] = useAuthState(auth);
+  
+  const logout = () => {
+    signOut(auth);
+    localStorage.removeItem('accessToken')
+  };
   
 
     
@@ -19,6 +27,44 @@ const Navbar = () => {
         <Link to="/home">  HOME </Link></li>
         <li className='text-white font-bold text-1xl  mx-2'>
         <Link to="/gallery">  GALLERY </Link></li>
+        <li className='text-white font-bold text-1xl  mx-2'></li>
+        <li className='text-white font-bold text-1xl  mx-2'>
+        <Link to="/dashboard">DASHBOARD </Link></li>
+
+        <li className='text-white font-bold text-1xl  mx-2'>
+        <Link to="/profile">PROFILE</Link></li>
+
+
+
+
+        { 
+         user?
+         <>
+
+       <li>
+       <button onClick={logout} class="btn btn-active btn-ghost text-white font-bold text-1xl  mx-2">SIGNOUT</button>
+      </li> 
+       
+
+        
+  
+         </>
+         :
+         <li className='text-white font-bold text-1xl  mx-2'>
+          <Link className='text-white font-bold text-1xl' to="/login">LOGIN</Link></li>
+        
+         
+         
+         
+         }
+
+     
+        
+       
+ 
+       
+       
+        
         
           
 
