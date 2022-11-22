@@ -23,7 +23,7 @@ const Signup = () => {
 
   //ON SUBMIT....
   const onSubmit = async data => {
-    await createUserWithEmailAndPassword(data.email, data.password);
+    await createUserWithEmailAndPassword(data.email, data.password, data.name);
 
   }
 

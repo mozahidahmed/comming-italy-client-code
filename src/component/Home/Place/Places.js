@@ -6,7 +6,7 @@ import Place from './Place';
 
 
 const Places = () => {
-    const { data: places, isLoading, refetch } = useQuery('places', () => fetch('https://comming-italy.onrender.com/places', {
+    const { data: places, isLoading, refetch } = useQuery('places', () => fetch('http://localhost:5000/places', {
         method: 'GET',
         headers: {
             'content-type': 'application/json'

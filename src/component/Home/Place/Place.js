@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import {AiOutlineLike} from "react-icons/ai";
 import {BiComment} from "react-icons/bi";
 import {RiShareForwardLine} from "react-icons/ri";
+import { Link } from 'react-router-dom';
 
 
 
@@ -17,7 +18,7 @@ const Place = ({ place ,refetch}) => {
  //.................................
  const handleLikes= () =>{
     const like={likes:likes+1};
-    const url=`https://comming-italy.onrender.com/places/${_id}`;
+    const url=`http://localhost:5000/places/${_id}`;
               fetch(url,{
              method:'PUT',
              headers:{
@@ -62,7 +63,10 @@ const Place = ({ place ,refetch}) => {
                    <span className='text-2xl'>{likes}</span> 
                   </div>
 
+                  <Link to={`/comment/${_id}`}>
                  <div className='flex items-center text-2xl'>  <BiComment/> </div>
+                 </Link>
+
                  <div className='flex items-center text-2xl'>  <RiShareForwardLine/> </div>
 
              
