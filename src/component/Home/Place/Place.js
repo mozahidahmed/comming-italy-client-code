@@ -18,7 +18,7 @@ const Place = ({ place ,refetch}) => {
  //.................................
  const handleLikes= () =>{
     const like={likes:likes+1};
-    const url=`http://localhost:5000/places/${_id}`;
+    const url=`https://comming-italy.onrender.com/places/${_id}`;
               fetch(url,{
              method:'PUT',
              headers:{
