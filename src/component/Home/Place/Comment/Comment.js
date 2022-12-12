@@ -5,63 +5,47 @@ import { AiOutlineSend } from "react-icons/ai";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import Loading from '../../../Shared/Loading';
 import { useQuery } from 'react-query';
+import SeeAllComments from './SeeAllComments';
 
 const Comment = () => {
-    const { id } = useParams();
+    const {id } = useParams();
     const [user] = useAuthState(auth)
     const [comment, setComment] = useState({});
     
-    console.log(user)
-
-
-
-
+    // .....
     const handleComment = event => {
         event.preventDefault();
-
         const comments = {
+            name:event.target.name.value,
             email: user.email,
             comment:event.target.writeComment.value,
         }
-
-        fetch('http://localhost:5000/comments', {
+           fetch('http://localhost:5000/comments', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(comments)
-
-
         })
             .then(res => res.json())
             .then(data => {
+                refetch()
                 console.log(data);
                 if (data.acknowledged) {
                     
                     console.log('Your Order success')
+
                 }
             }) }
-
-
-
-
-
-
-
-
-
-
-
-
-//    single fetch
+//    single fetch with _id.............
     useEffect(() => {
         fetch(`http://localhost:5000/places/${id}`)
             .then(res => res.json()).then(data => setComment(data))
     }, [])
 
 
-
-        const { data: comments, isLoading, refetch } = useQuery('comments', () => fetch('http://localhost:5000/comments', {
+// load all comments
+        const { data: comments, isLoading, refetch } = useQuery('comments', () => fetch(`http://localhost:5000/comments`, {
         method: 'GET',
         headers: {
             'content-type': 'application/json'
@@ -74,6 +58,7 @@ const Comment = () => {
     }
 
 
+    
     return (
         <div className='mt-2'>
 
@@ -94,6 +79,8 @@ const Comment = () => {
                    <div className="flex justify-start items-center">
                    <input name="email" type="text"  readOnly   value={user?.email} class="style-profile" />
 
+                <input name="name" type="text"   readOnly  value={comment.name} class="w-[0px]" />
+
                  <input name="writeComment" type="text" placeholder="Write comment.............." class="input input-bordered input-success w-full max-w-xs mx-2 style-comment-box" required/>
                  <button class="text-4xl mx-1" type="submit"><AiOutlineSend /></button>
                  </div>
@@ -105,11 +92,14 @@ const Comment = () => {
             {/*  */}
 
 
+
+<div className="">
 {comments.map((comment =>
  
- <h1>{comment.comment}</h1>
+ <SeeAllComments allComment={comment}></SeeAllComments>
 
 ))}
+</div>
 
 
 
