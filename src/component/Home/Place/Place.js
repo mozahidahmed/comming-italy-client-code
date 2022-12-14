@@ -6,10 +6,6 @@ import { Link } from 'react-router-dom';
 
 
 
-
-
-
-
 const Place = ({ place ,refetch}) => { 
     const [allLikes,setAllLikes]=useState({});
     const { _id,name,img,likes} = place;
@@ -50,14 +46,10 @@ const Place = ({ place ,refetch}) => {
                 </figure>
                 <div className="p-3 grid ">
                     <h1 className="text-1xl  text-primary font-bold">{name}</h1>
-                 
-                
-
-                 
+        
                 </div>
                 <div className="flex justify-between px-6 py-1">
-                   
-                   
+
                  <div className='flex items-center text-2xl'> 
                   <button className=''  onClick={handleLikes}><AiOutlineLike/>  </button>
                    <span className='text-2xl'>{likes}</span> 
@@ -68,13 +60,6 @@ const Place = ({ place ,refetch}) => {
                  </Link>
 
                  <div className='flex items-center text-2xl'>  <RiShareForwardLine/> </div>
-
-             
-                    
-                  
-                   
-                   
-             
                  </div>
             </div>
            

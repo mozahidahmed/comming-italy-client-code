@@ -27,10 +27,12 @@ const Places = () => {
             </div>
 
             <div className='grid justify-content-center sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
-                {places.map((place =>
+                
+                {places.slice(0,6).map((place =>
 
                     <Place key={place._id} place={place} refetch={refetch}></Place>
                 ))}
+
             </div>
 
 

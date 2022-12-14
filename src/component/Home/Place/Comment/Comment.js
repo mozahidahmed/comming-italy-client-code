@@ -20,7 +20,7 @@ const Comment = () => {
             email: user.email,
             comment:event.target.writeComment.value,
         }
-           fetch('http://localhost:5000/comments', {
+           fetch('https://comming-italy.onrender.com/comments', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -30,22 +30,22 @@ const Comment = () => {
             .then(res => res.json())
             .then(data => {
                 refetch()
-                console.log(data);
-                if (data.acknowledged) {
-                    
-                    console.log('Your Order success')
-
-                }
+             
             }) }
+
 //    single fetch with _id.............
     useEffect(() => {
-        fetch(`http://localhost:5000/places/${id}`)
+        fetch(`https://comming-italy.onrender.com/places/${id}`)
             .then(res => res.json()).then(data => setComment(data))
     }, [])
 
 
+
+
+
+
 // load all comments
-        const { data: comments, isLoading, refetch } = useQuery('comments', () => fetch(`http://localhost:5000/comments`, {
+        const { data: comments, isLoading, refetch } = useQuery('comments', () => fetch(`https://comming-italy.onrender.com/comments`, {
         method: 'GET',
         headers: {
             'content-type': 'application/json'
