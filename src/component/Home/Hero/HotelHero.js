@@ -5,6 +5,7 @@ import image1 from '../../assert/italy1.jpg'
 
 
 const HotelHero = () => {
+    
     return (
        
         <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 mt-2  items-center'>

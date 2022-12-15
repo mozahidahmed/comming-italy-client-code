@@ -1,19 +1,28 @@
 import React, { useEffect, useState } from 'react';
+import { useQuery } from 'react-query';
+import Loading from '../../Shared/Loading';
 import HotelHero from '../Hero/HotelHero';
 import Hotel from './Hotel';
 
 
 const Hotels = () => {
-    const [services,setServices]=useState([]);
+    
 
 
-useEffect(()=>{
+const { data: hotels, isLoading, refetch } = useQuery('hotels', () => fetch('http://localhost:5000/hotel', {
+    method: 'GET',
+    headers: {
+        'content-type': 'application/json'
+    }
+}).then(res => res.json()))
 
-fetch('hotel.json')
-.then(res=>res.json()).then(data=>setServices(data))
+if (isLoading) {
+    return <Loading></Loading>
+
+}
 
 
-},[])
+
 
 
     return (
@@ -29,9 +38,9 @@ fetch('hotel.json')
            </div>
 
                     <div className='grid justify-content-center sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
-                        {services.map(service=>
+                        {hotels.map((hotel)=>
                        
-                      <Hotel  key={service._id} service={service}></Hotel>
+                      <Hotel  key={hotel._id} hotel={hotel}></Hotel>
                         )}
                     </div>
 

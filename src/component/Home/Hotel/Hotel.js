@@ -1,15 +1,10 @@
 import React from 'react';
-import image1 from '../../assert/italy1.jpg'
+import {AiOutlineArrowRight} from "react-icons/ai"
+import { Link } from 'react-router-dom';
 
 
-
-
-
-
-
-
-const Hotel = ({ service }) => {
-    const { _id, name,description, price, availableQuantity, minimumOrderQuantity } = service;
+const Hotel = ({ hotel }) => {
+    const { _id,img,name} = hotel;
 
 
 
@@ -17,12 +12,21 @@ const Hotel = ({ service }) => {
         <div>
             <div className="mt-6 lg:max-w-lg  shadow-xl">
                 <figure className="w-17"> 
-                        <img  src={image1} alt="NetWorkError"/>
+                        <img  src={img} alt="NetWorkError"/>
                 </figure>
-                <div className="p-3 grid justify-center">
+                <div className="p-3 flex justify-between items-center ">
                    
                    
-                    <h1 className="text-2xl text-center text-primary font-bold">SEE DETAILS</h1>
+                    <h1 className="text-1xl  text-primary font-bold">{name}</h1>
+                    
+                    <div className="flex items-center">
+                    <p className='px-2 font-bold'>Booking Now</p>
+                    <Link to={`/booking/${_id}`}>
+                    <div className="icon-style">
+                   <AiOutlineArrowRight></AiOutlineArrowRight>
+                    </div>
+                    </Link>
+                    </div>
 
                 </div>
 
