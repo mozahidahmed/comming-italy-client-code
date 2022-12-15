@@ -9,7 +9,7 @@ const Hotels = () => {
     
 
 
-const { data: hotels, isLoading, refetch } = useQuery('hotels', () => fetch('http://localhost:5000/hotel', {
+const { data: hotels, isLoading, refetch } = useQuery('hotels', () => fetch('https://comming-italy.onrender.com/hotel', {
     method: 'GET',
     headers: {
         'content-type': 'application/json'

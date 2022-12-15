@@ -9,7 +9,7 @@ const Booking = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/hotel/${id}`)
+        fetch(`https://comming-italy.onrender.com/hotel/${id}`)
             .then(res => res.json()).then(data => setBook(data))
     }, [])
 
