@@ -1,11 +1,13 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 
 import { useForm } from 'react-hook-form';
 import auth from '../../firebase.init';
 
 const Signup = () => {
+  const location=useLocation();
+  let from=location.state?.from?.pathname || "/"
   const { register, formState: { errors }, handleSubmit } = useForm();
   const [
     createUserWithEmailAndPassword,
@@ -31,7 +33,7 @@ const Signup = () => {
 // goto location
   const navigate = useNavigate();
   if (user) {
-    navigate('/achi');
+    navigate(from,{replace:true})
 
   }
 

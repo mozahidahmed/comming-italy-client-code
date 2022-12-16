@@ -28,7 +28,7 @@ function App() {
       <Route path='/login' element={<Login></Login>}></Route>
       <Route path='/achi' element={<RequireAuth>ghjg</RequireAuth>}></Route>
       <Route path='comment/:id' element={<Comment></Comment>}></Route>
-      <Route path='booking/:id' element={<Booking></Booking>}></Route>
+      <Route path='booking/:id' element={<RequireAuth><Booking></Booking></RequireAuth>}></Route>
     
       </Routes>
       
