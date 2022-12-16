@@ -3,6 +3,7 @@ import { Routes,Route } from 'react-router-dom/dist';
 
 import Home from './component/Home/Home';
 import Booking from './component/Home/Hotel/Booking';
+import HotelDetails from './component/Home/Hotel/HotelDetails';
 import Comment from './component/Home/Place/Comment/Comment';
 
 import Footer from './component/Shared/Footer';
@@ -28,6 +29,7 @@ function App() {
       <Route path='/login' element={<Login></Login>}></Route>
       <Route path='/achi' element={<RequireAuth>ghjg</RequireAuth>}></Route>
       <Route path='comment/:id' element={<Comment></Comment>}></Route>
+      <Route path='HotelDetails/:id' element={<RequireAuth><HotelDetails></HotelDetails></RequireAuth>}></Route>
       <Route path='booking/:id' element={<RequireAuth><Booking></Booking></RequireAuth>}></Route>
     
       </Routes>

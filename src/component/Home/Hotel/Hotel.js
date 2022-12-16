@@ -21,7 +21,7 @@ const Hotel = ({ hotel }) => {
                     
                     <div className="flex items-center">
                     <p className='px-2 font-bold'>Booking Now</p>
-                    <Link to={`/booking/${_id}`}>
+                    <Link to={`/HotelDetails/${_id}`}>
                     <div className="icon-style">
                    <AiOutlineArrowRight></AiOutlineArrowRight>
                     </div>
