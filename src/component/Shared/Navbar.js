@@ -23,15 +23,14 @@ const Navbar = () => {
  
         const menuitems=
         <>
-        <li className='text-white font-bold text-1xl  mx-2'>
+        <li className='text-white font-bold text-1xl  mx-1'>
         <Link to="/home">  HOME </Link></li>
-        <li className='text-white font-bold text-1xl  mx-2'>
+        <li className='text-white font-bold text-1xl  mx-1'>
         <Link to="/gallery">  GALLERY </Link></li>
-        <li className='text-white font-bold text-1xl  mx-2'></li>
-        <li className='text-white font-bold text-1xl  mx-2'>
-        <Link to="/dashboard">DASHBOARD </Link></li>
+        <li className='text-white font-bold text-1xl  mx-1'></li>
+       
 
-        <li className='text-white font-bold text-1xl  mx-2'>
+        <li className='text-white font-bold text-1xl  mx-1'>
         <Link to="/profile">PROFILE</Link></li>
 
 
@@ -40,46 +39,24 @@ const Navbar = () => {
         { 
          user?
          <>
-
-       <li>
-       <button onClick={logout} class="btn btn-active btn-ghost text-white font-bold text-1xl  mx-2">SIGNOUT</button>
-      </li> 
-       
-
+        <li className='text-white font-bold text-1xl  mx-2'>
+        <Link to="/dashboard">DASHBOARD </Link></li>
         
-  
-         </>
+       <li>
+       <button onClick={logout} class="btn btn-active btn-ghost text-white font-bold text-1xl  mx-1">SIGNOUT</button>
+      </li> 
+       </>
          :
-         <li className='text-white font-bold text-1xl  mx-2'>
+         <li className='text-white font-bold text-1xl  mx-1'>
           <Link className='text-white font-bold text-1xl' to="/login">LOGIN</Link></li>
         
          
          
          
-         }
-
-     
-        
-       
- 
-       
-       
-        
-        
-          
-
-   
-
-       
-       
-    
-     
-
-
-
-
-
+        }
         </>
+        
+        
       
     return (
       <div className=''>
@@ -108,11 +85,43 @@ const Navbar = () => {
      
        </div>
 
+
+       <div className='navbar-end'>
+       <label for="my-drawer-2" tabIndex="1" className="btn btn-ghost lg:hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+            </label>
        
+       </div>
+
+
+    
+     
+  
+
+
+
+{ 
+         user?
+         <>
+       <Link to="myprofile">
+   <div className="avatar">
+  <div className="w-12 rounded-full">
+    <img src="https://placeimg.com/192/192/people" />
+  </div>
+</div>
+</Link> 
+       </>
+         :
+         <li className='text-white font-bold text-1xl  mx-1'>
+         </li>
+        
+         
+         
+         
+         }
+
 
       </div>
-
-
       </div>
     );
 };

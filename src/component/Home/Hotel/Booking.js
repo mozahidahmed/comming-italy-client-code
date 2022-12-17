@@ -62,6 +62,124 @@ const Booking = () => {
 
         </div>
         <div className='flex flex-col w-full max-w-xs'>
+          <label className='mb-2' htmlFor='email'>
+            Phone Number
+          </label>
+       
+         
+             <input type="text"   name='email' placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+
+        </div>
+        
+        <div className='flex flex-col w-full max-w-xs'>
+          <label className='mb-3' for='education' >
+         Your's Country
+          </label>
+          <select
+            name='education'
+            id='education'
+            className="input input-bordered w-full max-w-xs"
+           
+          
+          >
+            <option value='SSC'>Bangladesh</option>
+            <option value='HSC'>India</option>
+            <option value='underGrad'>italy</option>
+           
+          </select>
+
+        
+        </div>
+
+        <div className='flex flex-col w-full max-w-xs'>
+          <label className='mb-3' for='room' >
+       Bed Quantity
+          </label>
+          <select
+            name='room'
+            id='room'
+            className="input input-bordered w-full max-w-xs"
+           
+          
+          >
+            <option value='SSC'>1 bed</option>
+            <option value='HSC'>2 bed</option>
+           
+           
+          </select>
+
+        
+        </div>
+
+        <div className='flex flex-col w-full max-w-xs'>
+          <label className='mb-3' for='room' >
+       Flowr Choose
+          </label>
+          <select
+            name='room'
+            id='room'
+            className="input input-bordered w-full max-w-xs"
+           
+          
+          >
+            <option value='SSC'>1 flowr</option>
+            <option value='SSC'>2 flowr</option>
+            <option value='SSC'>3 flowr</option>
+            <option value='SSC'>4 flowr</option>
+            <option value='SSC'>5 flowr</option>
+            <option value='SSC'>6 flowr</option>
+            <option value='SSC'>7 flowr</option>
+            <option value='SSC'>8 flowr</option>
+            <option value='SSC'>9 flowr</option>
+            <option value='SSC'>11 flowr</option>
+            <option value='SSC'>12 flowr</option>
+            <option value='SSC'>13 flowr</option>
+            <option value='SSC'>14 flowr</option>
+            <option value='SSC'>15 flowr</option>
+            <option value='SSC'>16 flowr</option>
+            <option value='SSC'>17 flowr</option>
+            <option value='SSC'>18 flowr</option>
+            <option value='SSC'>19 flowr</option>
+            <option value='SSC'>20 flowr</option>
+            
+        
+           
+           
+          </select>
+
+        
+        </div>
+        <div className='flex flex-col w-full max-w-xs'>
+          <label className='mb-3' for='room' >
+       Bed Quality
+          </label>
+          <select
+            name='room'
+            id='room'
+            className="input input-bordered w-full max-w-xs"
+           
+          
+          >
+            <option value='SSC'>m $200</option>
+            <option value='SSC'>n $300</option>
+            <option value='SSC'>b $200</option>
+            <option value='SSC'>v $300</option>
+            <option value='SSC'>c $200</option>
+            <option value='SSC'>x $300</option>
+            <option value='SSC'>z $200</option>
+            <option value='SSC'>t $300</option>
+           
+        
+           
+           
+          </select>
+
+        
+        </div>
+       
+       
+
+        <div className='flex flex-col w-full max-w-xs'>
           <h1 className='mb-3'>Gender</h1>
           <div className='flex gap-3'>
             <div>
@@ -91,6 +209,7 @@ const Booking = () => {
                 Female
               </label>
             </div>
+        
             <div>
               <input
                 type='radio'
@@ -105,76 +224,24 @@ const Booking = () => {
             </div>
           </div>
         </div>
-        <div className='flex flex-col w-full max-w-xs'>
-          <label className='mb-3' for='education' >
-         Your's Country
-          </label>
-          <select
-            name='education'
-            id='education'
-            className="input input-bordered w-full max-w-xs"
-           
+
+
+
+   
+        <div className='flex font-bold flex-col w-full max-w-xs'>
           
-          >
-            <option value='SSC'>Bangladesh</option>
-            <option value='HSC'>India</option>
-            <option value='underGrad'>italy</option>
+          <div className='flex gap-3'>
+            <div>
+            <p>I will give your's bookings details </p>
            
-          </select>
-
-        
+               
+              <div/>
+            
+              
+             
+            </div>
+          </div>
         </div>
-
-        <div className='flex flex-col w-full max-w-xs'>
-          <label className='mb-3' for='room' >
-       bed
-          </label>
-          <select
-            name='room'
-            id='room'
-            className="input input-bordered w-full max-w-xs"
-           
-          
-          >
-            <option value='SSC'>1 bed</option>
-            <option value='HSC'>2 bed</option>
-           
-           
-          </select>
-
-        
-        </div>
-
-        <div className='flex flex-col w-full max-w-xs'>
-          <label className='mb-3' for='room' >
-       Please
-          </label>
-          <select
-            name='room'
-            id='room'
-            className="input input-bordered w-full max-w-xs"
-           
-          
-          >
-            <option value='SSC'>1 flowr</option>
-            <option value='SSC'>2 flowr</option>
-            <option value='SSC'>3 flowr</option>
-            <option value='SSC'>4 flowr</option>
-            <option value='SSC'>5 flowr</option>
-            <option value='SSC'>6 flowr</option>
-            <option value='SSC'>7 flowr</option>
-            <option value='SSC'>8 flowr</option>
-            <option value='SSC'>9 flowr</option>
-            <option value='SSC'>10 flowr</option>
-        
-           
-           
-          </select>
-
-        
-        </div>
-       
-       
 
         <div className='flex justify-between items-center w-full'>
           <div className='flex  w-full max-w-xs'>
@@ -186,12 +253,15 @@ const Booking = () => {
               
             />
             <label for='terms'>I agree to terms and conditions</label>
+           
           </div>
+         
           <button
             className='px-4 py-3 grid justify-center bg-indigo-500 rounded-md font-semibold text-white text-lg disabled:bg-gray-500'
             type='submit'
            
           >
+           
             Submit
           </button>
         </div>
