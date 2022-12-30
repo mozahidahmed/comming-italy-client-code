@@ -17,7 +17,7 @@ import Signup from './component/Signup/Signup';
 
 function App() {
   return (
-    <div className="mx-6">
+    <div className="px-6">
       <Navbar></Navbar>
      
      
