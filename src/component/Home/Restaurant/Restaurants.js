@@ -1,19 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React  from 'react';
+import { useQuery } from 'react-query';
+import Loading from '../../Shared/Loading';
 import RestaurantHero from '../Hero/RestaurantHero';
 import Restaurant from './Restaurant';
 
 
 const Restaurants = () => {
-    const [services,setServices]=useState([]);
+    const { data: restaurant, isLoading, refetch } = useQuery('restaurant', () => fetch('https://comming-italy.onrender.com/restaurant', {
+        method: 'GET',
+        headers: {
+            'content-type': 'application/json'
+        }
+    }).then(res => res.json()))
 
+    if (isLoading) {
+        return <Loading></Loading>
 
-useEffect(()=>{
-
-fetch('hotel.json')
-.then(res=>res.json()).then(data=>setServices(data))
-
-
-},[])
+    }
 
 
     return (
@@ -29,7 +32,7 @@ fetch('hotel.json')
            </div>
 
                     <div className='grid justify-content-center sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
-                        {services.map(service=>
+                        {restaurant.map(service=>
                        
                       <Restaurant  key={service._id} service={service}></Restaurant>
                         )}

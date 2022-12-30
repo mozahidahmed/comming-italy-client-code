@@ -27,3 +27,18 @@
 .border-dotted{
     border:1px solid dotted
 }
+
+.rs-button-style{
+    border:2px solid orange;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 30px;
+
+}
+
+.rs-button-style:hover{
+    background-color: orange;
+
+}

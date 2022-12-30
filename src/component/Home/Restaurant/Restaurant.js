@@ -9,30 +9,23 @@ import image1 from '../../assert/italy1.jpg'
 
 
 const Restaurant = ({ service }) => {
-    const { _id, name,description, price, availableQuantity, minimumOrderQuantity } = service;
+    const { _id,img } = service;
 
 
 
     return (
         <div>
-            <div className="mt-6 lg:max-w-lg  shadow-xl">
-                <figure className="w-17"> 
-                        <img  src={image1} alt="NetWorkError"/>
-                </figure>
-                <div className="p-3 grid justify-center">
-                   
-                   
-                    <h1 className="text-2xl text-center text-primary font-bold">ORDER NOW</h1>
-
-                </div>
-
-               
-            
-            
-         
-               
-
-            </div>
+           <div className="card w-96 bg-base-100 shadow-xl">
+  <figure className="px-10 pt-10">
+    <img src={img} alt="Shoes"  className="rounded-xl h-[200px]" />
+  </figure>
+  <div className="card-body items-center text-center">
+    <p className='font-bold'>$210</p>
+    <div className="card-actions">
+      <p className='rs-button-style'>Order Now</p>
+    </div>
+  </div>
+</div>
         </div>
     );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import image1 from '../../assert/italy1.jpg'
+
 
 
 
@@ -10,7 +10,7 @@ const RestaurantHero = () => {
         <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 mt-2  items-center'>
 
           <div>
-          <img src={image1} class="w-50 shadow-5xl" />
+          <img src="https://i.ibb.co/frM14QQ/1.png" class="w-50 shadow-5xl" />
           </div>
 
             <div className="">
