@@ -15,7 +15,7 @@ const Restaurant = ({ service }) => {
 
     return (
         <div>
-           <div className="card w-96 bg-base-100 shadow-xl">
+           <div className="card w-84 bg-base-100 shadow-xl">
   <figure className="px-10 pt-10">
     <img src={img} alt="Shoes"  className="rounded-xl h-[200px]" />
   </figure>
