@@ -11,7 +11,8 @@ const Comment = () => {
     
     const {id } = useParams();
     const [user] = useAuthState(auth)
-    const [places, setPlaces] = useState([]);
+    // const [places, setPlaces] = useState([]);
+     const [comments, setComments] = useState([]);
   
   
 
@@ -38,18 +39,22 @@ const Comment = () => {
             }) }
 
 //    single fetch with _id.............
-    useEffect(() => {
-        fetch(`https://comming-italy.onrender.com/places/${id}`)
-            .then(res => res.json()).then(data => setPlaces(data))
+//     useEffect(() => {
+//         fetch(`https://comming-italy.onrender.com/places/${id}`)
+//             .then(res => res.json()).then(data => setPlaces(data))
           
-    }, [])
-console.log(places.name)
+//     }, [])
+// console.log(places.name)
     
+useEffect(() => {
+    fetch(`https://comming-italy.onrender.com/comments?name=${places?.name}`)
+        .then(res => res.json()).then(data => setComments(data))
+      
+}, [])
 
 
 
-
-        const { data: comments, isLoading, refetch } = useQuery('comments', () => fetch(`https://comming-italy.onrender.com/comments?name=${places?.name}`, {
+        const { data: places, isLoading, refetch } = useQuery('places', () => fetch(`https://comming-italy.onrender.com/places/${id}`, {
         method: 'GET',
         
         headers: {
@@ -62,6 +67,28 @@ console.log(places.name)
      
 
     }
+
+
+
+ 
+
+console.log(comments.name)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     
