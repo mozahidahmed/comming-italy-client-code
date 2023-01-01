@@ -8,6 +8,7 @@ import Home from './component/Home/Home';
 import Booking from './component/Home/Hotel/Booking';
 import HotelDetails from './component/Home/Hotel/HotelDetails';
 import Comment from './component/Home/Place/Comment/Comment';
+import FoodOrder from './component/Home/Restaurant/FoodOrder';
 import Footer from './component/Shared/Footer';
 import Navbar from './component/Shared/Navbar';
 import Login from './component/Signup/Login';
@@ -30,6 +31,7 @@ function App() {
       <Route path='comment/:id' element={<Comment></Comment>}></Route>
       <Route path='HotelDetails/:id' element={<RequireAuth><HotelDetails></HotelDetails></RequireAuth>}></Route>
       <Route path='booking/:id' element={<RequireAuth><Booking></Booking></RequireAuth>}></Route>
+      <Route path='foodorder/:id' element={<RequireAuth><FoodOrder/></RequireAuth>}></Route>
 
 
 

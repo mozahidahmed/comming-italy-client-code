@@ -5,6 +5,7 @@ import { AiOutlineSend } from "react-icons/ai";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import Loading from '../../../Shared/Loading';
 import { useQuery } from 'react-query';
+import { axios } from 'axios';
 import SeeAllComments from './SeeAllComments';
 
 const Comment = () => {
@@ -12,18 +13,35 @@ const Comment = () => {
     const {id } = useParams();
     const [user] = useAuthState(auth)
     const [places, setPlaces] = useState([]);
-   
+    const{name}=places
+  
+
+
    
   //    single fetch with _id.............
 
-  
+
+
+//   useEffect(() => {
+//     fetch(`https://comming-italy.onrender.com/places/${id}`)
+//         .then(res => res.json()).then(data => setPlaces(data))
+      
+// }, [])
+
+// console.log(name)
+
+
+
 
   useEffect(() => {
+
     fetch(`https://comming-italy.onrender.com/places/${id}`)
-        .then(res => res.json()).then(data => setPlaces(data))
-      
+    .then(res => res.json()).then(data => setPlaces(data))
+    
 }, [])
-console.log(places.name)
+
+console.log(name)
+
   
 
     
@@ -50,30 +68,25 @@ console.log(places.name)
 
 
     
-          
 
 
 
-        const { data: comments, isLoading, refetch } = useQuery('comments', () => fetch(`https://comming-italy.onrender.com/comments?name=${places.name}`, {
+
+
+        const { data: comments, isLoading, refetch } = useQuery('comments', () => fetch(`https://comming-italy.onrender.com/comments?name=${name}`, {
         method: 'GET',
         
         headers: {
             'content-type': 'application/json'
         }   
     }).then(res => res.json()
-   
-   
-    
     ))
 
-    if (isLoading) {
-        return <Loading></Loading>
-     
+  if(isLoading){
+    return <Loading/>
+  }
 
-    }
-  
 
-   
   
 
     
@@ -112,7 +125,7 @@ console.log(places.name)
 
 
 <div className="">
-{comments?.map((comment =>
+{comments.map((comment =>
  
  <SeeAllComments key={comment._id} allComment={comment}></SeeAllComments>
 

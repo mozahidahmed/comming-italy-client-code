@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import image1 from '../../assert/italy1.jpg'
 
 
@@ -21,9 +22,11 @@ const Restaurant = ({ service }) => {
   </figure>
   <div className="card-body items-center text-center">
     <p className='font-bold'>$210</p>
+    <Link to={`/foodorder/${_id}`}>
     <div className="card-actions">
       <p className='rs-button-style'>Order Now</p>
     </div>
+    </Link>
   </div>
 </div>
         </div>
