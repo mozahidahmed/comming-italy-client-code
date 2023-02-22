@@ -6,7 +6,7 @@
 
 </ol>
 <ul>
-<li>Places </li>
+<li>Overview of Places section </li>
 <li>Like</li>
 <li>Comment</li>
 <li>Shared</li>
