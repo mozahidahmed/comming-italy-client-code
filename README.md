@@ -5,11 +5,11 @@
 <li>Resturent</li>
 
 </ol>
-<ol>
+<ul>
 <li>Places </li>
 <li>Like</li>
 <li>Comment</li>
 <li>Shared</li>
 
 
-</ol>
+</ul>
